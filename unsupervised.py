@@ -27,21 +27,21 @@ def unsupervised_kmeans(X, k_values=[2, 3, 4, 5, 6]):
         
         print(f"{k:<5} | {score:.3f}         | {is_best}")
     
-    print(f"\nKonklusjon: Optimalt antall klynger er k={best_k} (score={best_score:.3f})")
+    print(f"\nOptimal number of clusters is k={best_k} (score={best_score:.3f})")
 
 
 
 def unsupervised_dbscan(X, eps_values=[0.3, 0.5, 0.7], min_samples_values=[5, 10]):
     
     print("\n---------------- K-DBSCAN ----------------")
-    print("Parametere som testes:")
-    print(f"eps-verdier: {eps_values}")
-    print(f"min_samples-verdier: {min_samples_values}\n")
+    print("Parameters tested:")
+    print(f"eps values: {eps_values}")
+    print(f"min_samples values: {min_samples_values}\n")
     
     X_scaled = StandardScaler().fit_transform(X)
     
 
-    print(f"{'eps':<5} | {'min_samples':<12} | Antall klynger | Støy-punkter | Silhuett-score")
+    print(f"{'eps':<5} | {'min_samples':<12} | Number of clusters | Noise points | Silhouette score")
     print("-" * 70)
     
     for eps in eps_values:
